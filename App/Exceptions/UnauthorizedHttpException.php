@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Exceptions;
+
+use Exception;
+use Symfony\Component\HttpFoundation\Response;
+
+class UnauthorizedHttpException extends Exception
+{
+    protected $message;
+
+    public function __construct($message)
+    {
+        $this->message = $message;
+    }
+
+    public function render()
+    {
+        return response()->json([
+           'message'=>$this->message
+        ], Response::HTTP_UNAUTHORIZED);
+    }
+}
