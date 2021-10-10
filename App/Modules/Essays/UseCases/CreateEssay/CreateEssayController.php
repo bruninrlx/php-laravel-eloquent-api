@@ -1,10 +1,12 @@
 <?php
 namespace App\Modules\Essays\UseCases\CreateEssay;
+
+use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
 use App\Modules\Essays\UseCases\CreateEssay\CreateEssayUseCase;
 use App\Modules\Essays\UseCases\CreateEssay\ValidationRequest;
 
-class CreateEssayController{
+class CreateEssayController extends BaseController{
 
     private $createEssayUseCase;
 

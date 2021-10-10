@@ -1,15 +1,14 @@
 <?php
 namespace App\Modules\Users\UseCases\CreateUser;
-use App\Http\Controllers\Controller;
 
+use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
 use App\Modules\Users\UseCases\CreateUser\CreateUserUseCase;
 use App\Modules\Users\UseCases\CreateUser\IRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Http;
 
-class CreateUserController extends Controller{
+class CreateUserController extends BaseController{
   private $createUserUseCase;
 
   public function __construct(

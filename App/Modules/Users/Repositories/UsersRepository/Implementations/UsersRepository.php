@@ -8,14 +8,13 @@ use Illuminate\Database\Eloquent\Collection;
 
 class UsersRepository implements IUsersRepository {
 
-
   public function create(ICreateUserDTO $user): User {
     $user = User::create(
         [
-         'name'=>$user->name,
-         'email'=>$user->email,
-         'password'=>bcrypt($user->password),
-         'users_role_id'=>$user->users_role_id
+            'name'=>$user->name,
+            'email'=>$user->email,
+            'password'=>bcrypt($user->password),
+            'users_role_id'=>$user->users_role_id
         ]
     );
 

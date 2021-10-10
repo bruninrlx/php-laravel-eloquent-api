@@ -1,11 +1,10 @@
 <?php
 
+use App\Http\Controllers\BaseController;
 use App\Modules\Users\UseCases\ListUsersRoles\ListUsersRolesUseCase;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Client\Response;
 use Illuminate\Http\JsonResponse;
 
-class ListUsersRolesController {
+class ListUsersRolesController extends BaseController {
 
     private $listUsersRolesUseCase;
 

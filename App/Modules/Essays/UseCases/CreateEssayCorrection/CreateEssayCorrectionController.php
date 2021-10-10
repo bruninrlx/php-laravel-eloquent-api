@@ -1,11 +1,13 @@
 <?php
 namespace App\Modules\Essays\UseCases\CreateEssayCorrection;
+
+use App\Http\Controllers\BaseController;
 use App\Modules\Essays\UseCases\CreateEssayCorrection\CreateEssayCorrectionUseCase;
 use App\Modules\Essays\UseCases\CreateEssayCorrection\IRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class CreateEssayCorrectionController {
+class CreateEssayCorrectionController extends BaseController {
 
     private $createEssayCorrectionUseCase;
 

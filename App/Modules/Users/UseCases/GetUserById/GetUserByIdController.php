@@ -1,12 +1,12 @@
 <?php
 namespace App\Modules\Users\UseCases\GetUserById;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\BaseController;
 use App\Modules\Users\UseCases\GetUserById\GetUserByIdUseCase;
 use App\Modules\Users\UseCases\GetUserById\IRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 
-class GetUserByIdController extends Controller {
+class GetUserByIdController extends BaseController {
 
     private $getUserByIdUseCase;
 

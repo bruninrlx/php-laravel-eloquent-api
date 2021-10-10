@@ -1,14 +1,14 @@
 <?php
 namespace App\Modules\Users\UseCases\CreateUserRole;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\BaseController;
 use App\Modules\Users\UseCases\CreateUserRole\CreateUserRoleUseCase;
 use App\Modules\Users\UseCases\CreateUserRole\IRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class CreateUserRoleController extends Controller {
+class CreateUserRoleController extends BaseController {
     private $createUserRoleUseCase;
 
     public function __construct(

@@ -1,10 +1,10 @@
 <?php
 namespace App\Modules\Users\UseCases\ListUsers;
 
+use App\Http\Controllers\BaseController;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Response;
 
-class ListUsersController {
+class ListUsersController extends BaseController {
   protected $listUsersUseCase;
 
   public function __construct(

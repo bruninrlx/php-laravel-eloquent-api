@@ -8,6 +8,7 @@ use App\Modules\Users\UseCases\CreateUser\CreateUserController;
 use App\Modules\Users\UseCases\CreateUserRole\CreateUserRoleController;
 use App\Modules\Users\UseCases\GetUserById\GetUserByIdController;
 use App\Modules\Users\UseCases\ListUsers\ListUsersController;
+use App\Modules\Users\UseCases\RefreshToken\RefreshTokenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,20 +21,14 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
-
-
 Route::post('/login', [AuthenticateUserController::class, 'handle']);
 Route::post('/users', [CreateUserController::class, 'handle']);
+Route::post('/refresh-token', [RefreshTokenController::class, 'handle']);
+Route::post('/users-role', [CreateUserRoleController::class, 'handle']);
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/users', [ListUsersController::class, 'handle']);
-    Route::post('/users-role', [CreateUserRoleController::class, 'handle']);
     Route::post('/essays', [CreateEssayController::class, 'handle']);
     Route::put('/essay-correction/{id}', [CreateEssayCorrectionController::class, 'handle']);
     Route::get('/users/{id}', [GetUserByIdController::class, 'handle']);
